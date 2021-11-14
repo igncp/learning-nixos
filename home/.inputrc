@@ -1,0 +1,17 @@
+set mark-symlinked-directories on
+set show-all-if-ambiguous on
+
+C-h:unix-filename-rubout
+C-k:edit-and-execute-command
+
+Control-x: " fg\n"
+Control-}: " | less -SR\n"
+
+set show-all-if-ambiguous on
+
+# How to get these characters:
+# - run `sed -n l`
+# - type combination (it only works for some, like ctrl + something)
+# - copy it here, but replace ^[ with  (ctrl-v ctrl-[ in insert mode)
+"[1;5A":menu-complete # ctrl-up
+"[1;5B":menu-complete-backward # ctrl-down
