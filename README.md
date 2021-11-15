@@ -6,7 +6,7 @@ The goal is to spend at least 30 days learning Nix + NixOS, and then decide if i
 
 The idea is that the 30 days don't have to be consecutive although each learning day should be at most a few days apart from each other. I have to spend at least one hour for it to count as a day.
 
-Days spent learning: 2/30
+Days spent learning: 3/30
 
 - https://nixos.org/
 
@@ -14,6 +14,8 @@ Days spent learning: 2/30
 
 - Glossary of common terms: https://nixos.org/manual/nix/stable/glossary.html
 - Flakes: https://nixos.wiki/wiki/Flakes
+- Overlays: https://nixos.wiki/wiki/Overlays
+- Module: https://nixos.wiki/wiki/Module
 - NAR: Nix ARchive
 
 ## Current Setup
@@ -85,6 +87,8 @@ Days spent learning: 2/30
 - `home-manager build`
 - "The option names of a program module typically start with programs.<package name>."
 - Options: https://rycee.gitlab.io/home-manager/options.html
+- Modules:
+    - zsh: https://github.com/nix-community/home-manager/blob/master/modules/programs/zsh.nix
 
 ## Env variables
 
@@ -97,12 +101,14 @@ Days spent learning: 2/30
 - "Managing packages is mostly done with the `nix-env` command"
 - Raspberry PI: https://nixos.wiki/wiki/NixOS_on_ARM/Raspberry_Pi
 - `-A` refers to "Attribute" in multiple commands like `nix-build` or `nix-env`)
+- Conditionally use an environment variable: https://discourse.nixos.org/t/is-this-a-good-way-to-modularize-home-manager-home-nix-for-home-work/5817/5
 
 ## Resources
 
 - Channels: https://channels.nixos.org/
 - Nix manual: https://nixos.org/manual/nix/stable
 - Nix Pills: https://nixos.org/guides/nix-pills/index.html
+- Nix language summary: https://nixos.wiki/wiki/Nix_Expression_Language
 - Package versions: https://lazamar.co.uk/nix-versions/
 - Search for options: https://search.nixos.org/options
 - Search for packages: https://search.nixos.org/packages
@@ -124,6 +130,11 @@ Days spent learning: 2/30
 - Nix: https://nix-tutorial.gitlabpages.inria.fr/nix-tutorial/getting-started.html
 - https://rgoswami.me/posts/ccon-tut-nix/
 - Example of bundling a binary: https://discourse.nixos.org/t/how-to-install-github-released-binary/1328/5
+
+### Repos
+
+- nixpkgs: `git clone https://github.com/NixOS/nixpkgs.git --depth 1`
+- nix: `git clone https://github.com/NixOS/nix.git --depth 1`
 
 ### Others
 

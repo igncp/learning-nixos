@@ -1,0 +1,19 @@
+[user]
+  email = icarbajop@gmail.com
+  name = Ignacio
+[core]
+  editor = nvim
+[alias]
+  l = log --pretty=format:'%Cred%h%Creset%C(yellow)%d%Creset %s %C(bold blue)%an %Cgreen%cd%Creset' --date=short
+[color "diff-highlight"]
+	oldNormal = "#bb0000"
+	oldHighlight = "#bb0000 reverse"
+	newNormal = "#009900"
+	newHighlight = "#009900 reverse"
+[color "diff"]
+	meta = "#0000cc"
+	frag = "#333333 #dddddd"
+	func = "#666666 #dddddd"
+	old = "#bb0000"
+	new = "#009900"
+	whitespace = "#0000ff reverse"

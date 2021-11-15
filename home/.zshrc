@@ -3,8 +3,6 @@ bindkey "\C-g" vi-forward-blank-word
 bindkey "\C-f" vi-backward-blank-word
 bindkey "\C-u" kill-region
 
-bindkey "\C-k" edit-command-line
-
 export WORDCHARS='*?_-.[]~=&;!#$%^(){}<>/|'
 
 backward-kill-dir () {
@@ -52,3 +50,14 @@ if [ -n "${commands[fzf-share]}" ]; then
 fi
 
 alias ll='ls -lah'
+
+plugins=(
+  git
+  ufw
+  zsh-syntax-highlighting
+  zsh-autopair
+  zsh-completions
+)
+
+# TODO: There is an issue with the following file
+# bindkey "\C-k" edit-command-line

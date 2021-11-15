@@ -13,28 +13,13 @@
   environment.systemPackages = with pkgs;
     [
       git
-      neovim-nightly
       nodejs
     ];
-  environment.variables.EDITOR = "nvim";
-  environment.shellAliases = {
-    l = null;
-    ll = null;
-  };
 
   networking.hostName = "nixos-tests";
   networking.interfaces.enp0s3.useDHCP = true;
   networking.useDHCP = false;
 
-  nixpkgs.overlays = [
-    # for neovim-nightly
-    (import (builtins.fetchTarball {
-      url = https://github.com/nix-community/neovim-nightly-overlay/archive/master.tar.gz;
-    }))
-  ];
-
-  programs.neovim.enable = true;
-  programs.neovim.viAlias = true;
   programs.zsh.enable = true;
 
   services.openssh.enable = true;
@@ -49,6 +34,8 @@
   };
 
   system.stateVersion = "21.05";
+
+  time.timeZone = "Europe/Madrid";
 
   users.extraUsers.igncp = {
     extraGroups = [ "wheel" ];
