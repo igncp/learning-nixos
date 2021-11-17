@@ -34,9 +34,22 @@
 
   programs.zsh.plugins = personal_config.zsh_plugins;
   programs.zsh.oh-my-zsh.enable = false;
+
   programs.git.enable = true;
   programs.git.includes = [{ path = ./gitconfig; }];
+
   programs.neovim.enable = true;
   programs.neovim.extraConfig = builtins.readFile ./.vimrc;
+
+  programs.vscode = {
+    enable = true;
+    package = pkgs.vscodium;
+  };
+
+  programs.rofi.enable = true;
+
+  # xdg.enable = true;
+  # xdg.configFile."i3/config".text = builtins.readFile ./i3;
+  # xsession.windowManager.i3.enable = true;
 }
 

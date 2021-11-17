@@ -28,9 +28,7 @@
   services.xserver = {
     enable = true;
     autorun = true;
-    windowManager = {
-      i3.enable = true;
-    };
+    windowManager.i3.enable = true;
   };
 
   system.stateVersion = "21.05";
@@ -43,5 +41,9 @@
     isNormalUser = true;
     shell = pkgs.zsh;
   };
+
+  users.users.igncp.openssh.authorizedKeys.keys =
+    let keys = import /home/igncp/.config/nixpkgs/ssh.nix;
+    in [ keys.authorizedKeys ];
 }
 

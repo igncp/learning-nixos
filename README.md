@@ -6,7 +6,7 @@ The goal is to spend at least 30 days learning Nix + NixOS, and then decide if i
 
 The idea is that the 30 days don't have to be consecutive although each learning day should be at most a few days apart from each other. I have to spend at least one hour for it to count as a day.
 
-Days spent learning: 3/30
+Days spent learning: 4/30
 
 - https://nixos.org/
 
@@ -26,10 +26,18 @@ Days spent learning: 3/30
 - Installation steps:
     - `sudo passwd nixos` - to be able to SSH into it
     - At this point can ssh into the VM: `ssh nixos@192.168.1.X`
-    - `sudo mount /dev/sda1 /mtn`
+    - Remember to create a BIOS Boot partition
+    - `sudo mkfs.ext4 /dev/sda2`
+    - `sudo mount /dev/sda2 /mnt`
     - `sudo nixos-generate-config --root /mnt`
     - Update the config to point the bootloader into the installed device
+        - `sudo vim /mnt/etc/nixos/configuration.nix`
     - `sudo nixos-install`
+    - Reboot and extract the CD
+    - Login as root: `passwd igncp`
+    - Uncomment ssh config
+    - `mkdir -p /home/igncp/.config/nixpkgs/ && nix-env -i home-manager `
+    - May have to set priority if the `home-manager switch` fails: `nix-env --set-flag priority 4 home-manager`
 - Useful config:
     - Add user to sudoers: https://unix.stackexchange.com/a/498693
     - Enable SSH: `services.sshd.enable = true;`
@@ -49,6 +57,8 @@ Days spent learning: 3/30
 - Find path of binary: `readlink -f $(which git)`
 - To synchronize the store between several machines: `nix-copy-closure`
 - Search package: `nix search nodejs`
+- When a .drv file is corrupt, can delete it with: `sudo nix-store --delete --ignore-liveness FILE.drv`
+    - Remember to collect the garbage: `nix-collect-garbage`
 - Repl: `nix repl`
     - Show commands: `:?`
     - Load packages: `:l <nixpkgs>`
@@ -123,6 +133,7 @@ Days spent learning: 3/30
 
 - https://github.com/mitchellh/nixos-config
 - https://github.com/thomashoneyman/.dotfiles
+- https://github.com/srid/nix-config/
 
 ### Tutorials
 
@@ -130,6 +141,7 @@ Days spent learning: 3/30
 - Nix: https://nix-tutorial.gitlabpages.inria.fr/nix-tutorial/getting-started.html
 - https://rgoswami.me/posts/ccon-tut-nix/
 - Example of bundling a binary: https://discourse.nixos.org/t/how-to-install-github-released-binary/1328/5
+- Derivations: https://www.sam.today/blog/creating-a-super-simple-derivation-learning-nix-pt-3/
 
 ### Repos
 
