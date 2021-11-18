@@ -6,7 +6,7 @@ The goal is to spend at least 30 days learning Nix + NixOS, and then decide if i
 
 The idea is that the 30 days don't have to be consecutive although each learning day should be at most a few days apart from each other. I have to spend at least one hour for it to count as a day.
 
-Days spent learning: 4/30
+Days spent learning: 5/30
 
 - https://nixos.org/
 
@@ -54,6 +54,7 @@ Days spent learning: 4/30
 - Clear space: `nix-collect-garbage`
 - Show a derivation: `nix show-derivation /nix/store/z3hhlxbckx4g3n9sw91nnvlkjvyw754p-myname.drv»`
 - Build a derivation: `nix-store -r /nix/store/z3hhlxbckx4g3n9sw91nnvlkjvyw754p-myname.drv`
+- Build a derivation file: `nix-build -E '((import <nixpkgs> {}).callPackage (import ./default.nix) { })' --keep-failed --no-out-link`
 - Find path of binary: `readlink -f $(which git)`
 - To synchronize the store between several machines: `nix-copy-closure`
 - Search package: `nix search nodejs`
@@ -102,6 +103,7 @@ Days spent learning: 4/30
 
 ## Env variables
 
+- https://nixos.org/manual/nix/unstable/command-ref/env-common.html
 - `$NIX_PATH`: Important variable, similar to `$PATH`: https://nixos.org/guides/nix-pills/nix-search-paths.html
 
 ## Misc

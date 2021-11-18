@@ -14,7 +14,9 @@
     [
       git
       nodejs
+      alacritty
     ];
+  environment.sessionVariables.TERMINAL = [ "alacritty" ];
 
   networking.hostName = "nixos-tests";
   networking.interfaces.enp0s3.useDHCP = true;

@@ -1,6 +1,9 @@
 set background=light
 filetype plugin indent on
-syntax on
+
+syntax off
+hi LineNr ctermfg=grey
+
 set sessionoptions+=globals
 let mapleader = "\<Space>"
 

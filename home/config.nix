@@ -9,7 +9,7 @@
     neofetch
     oh-my-zsh
     ranger
-    scc
+    # scc
     tree
     unzip
     zip

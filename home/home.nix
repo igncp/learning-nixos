@@ -51,5 +51,12 @@
   # xdg.enable = true;
   # xdg.configFile."i3/config".text = builtins.readFile ./i3;
   # xsession.windowManager.i3.enable = true;
+
+  programs.alacritty = {
+    enable = true;
+    settings = {
+      font.size = 18;
+    };
+  };
 }
 
