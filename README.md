@@ -44,9 +44,10 @@ Days spent learning: 5/30
     - First time you can login as root
 
 ## NixOS
-    - `nixos-rebuild switch`
-    - Upgrade: `nixos-rebuild switch --upgrade`
-    - Find a value of an option: `nixos-option services.xserver.enable`
+
+- `nixos-rebuild switch`
+- Upgrade: `nixos-rebuild switch --upgrade`
+- Find a value of an option: `nixos-option services.xserver.enable`
 
 ## Nix
 
@@ -117,6 +118,7 @@ Days spent learning: 5/30
 
 ## Resources
 
+- Reference options for NixOS: https://nixos.org/manual/nixos/stable/options.html
 - Channels: https://channels.nixos.org/
 - Nix manual: https://nixos.org/manual/nix/stable
 - Nix Pills: https://nixos.org/guides/nix-pills/index.html
