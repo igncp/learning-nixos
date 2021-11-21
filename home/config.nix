@@ -1,21 +1,4 @@
 {
-  get_home_pkgs = pkgs: with pkgs; [
-    fzf
-    htop
-    jq
-    lsof
-    moreutils # vidir
-    ncdu
-    neofetch
-    oh-my-zsh
-    ranger
-    # scc
-    tree
-    unzip
-    zip
-    zsh
-  ];
-
   zsh_plugins = [
     {
       name = "zsh-syntax-highlighting";

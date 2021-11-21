@@ -6,6 +6,13 @@
       ./hardware-configuration.nix
     ];
 
+  nix = {
+    package = pkgs.nixFlakes;
+    extraOptions = ''
+      experimental-features = nix-command flakes
+    '';
+  };
+
   boot.loader.grub.device = "/dev/sda";
   boot.loader.grub.enable = true;
   boot.loader.grub.version = 2;
@@ -25,8 +32,10 @@
   programs.zsh.enable = true;
 
   services.openssh.enable = true;
+
   # For easier SSH copying
   services.openssh.permitRootLogin = "yes";
+
   services.xserver = {
     enable = true;
     autorun = true;

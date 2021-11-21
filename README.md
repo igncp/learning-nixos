@@ -6,14 +6,13 @@ The goal is to spend at least 30 days learning Nix + NixOS, and then decide if i
 
 The idea is that the 30 days don't have to be consecutive although each learning day should be at most a few days apart from each other. I have to spend at least one hour for it to count as a day.
 
-Days spent learning: 5/30
+Days spent learning: 6/30
 
 - https://nixos.org/
 
 ## Concepts
 
 - Glossary of common terms: https://nixos.org/manual/nix/stable/glossary.html
-- Flakes: https://nixos.wiki/wiki/Flakes
 - Overlays: https://nixos.wiki/wiki/Overlays
 - Module: https://nixos.wiki/wiki/Module
 - NAR: Nix ARchive
@@ -49,22 +48,33 @@ Days spent learning: 5/30
 - Upgrade: `nixos-rebuild switch --upgrade`
 - Find a value of an option: `nixos-option services.xserver.enable`
 
-## Nix
+## nix package manager
 
 - List dependencies: `nix-store -q --references /nix/store/z77vn965a59irqnrrjvbspiyl2rph0jp-hello.drv`
 - Clear space: `nix-collect-garbage`
 - Show a derivation: `nix show-derivation /nix/store/z3hhlxbckx4g3n9sw91nnvlkjvyw754p-myname.drv»`
 - Build a derivation: `nix-store -r /nix/store/z3hhlxbckx4g3n9sw91nnvlkjvyw754p-myname.drv`
 - Build a derivation file: `nix-build -E '((import <nixpkgs> {}).callPackage (import ./default.nix) { })' --keep-failed --no-out-link`
-- Find path of binary: `readlink -f $(which git)`
 - To synchronize the store between several machines: `nix-copy-closure`
 - Search package: `nix search nodejs`
+- Find path of binary: `readlink -f $(which git)`
+  - Also: Find binary: `nix-locate 'bin/hello'`
+      - Needs: `nix-env -iA nixos.nix-index`
 - When a .drv file is corrupt, can delete it with: `sudo nix-store --delete --ignore-liveness FILE.drv`
     - Remember to collect the garbage: `nix-collect-garbage`
+- `mkDerivation` docs: http://blog.ielliott.io/nix-docs/stdenv-mkDerivation.html
+- Build a local nix file:
+    - Example: `(callPackage ./scc.nix { })`
+    - Remember that when changing the version, need to update to a wrong has too
+    - https://nixos.org/guides/nix-pills/callpackage-design-pattern.html
 - Repl: `nix repl`
     - Show commands: `:?`
     - Load packages: `:l <nixpkgs>`
     - Start the repl with nixpkgs loaded: `nix repl '<nixpkgs>'`: useful to inspect attributes
+
+## Nix language
+
+- `@` usage explanation: https://nixos.wiki/wiki/Nix_Expression_Language
 
 ### nix-shell
 
@@ -102,6 +112,19 @@ Days spent learning: 5/30
 - Modules:
     - zsh: https://github.com/nix-community/home-manager/blob/master/modules/programs/zsh.nix
 
+## nixops
+
+- https://github.com/NixOS/nixops
+
+## Flakes
+
+- Flakes: https://nixos.wiki/wiki/Flakes
+- Introduction tutorial: https://www.tweag.io/blog/2020-05-25-flakes/
+    - Example of flake: https://github.com/edolstra/dwarffs
+    - Get metadata of a flake: `nix flake metadata github:edolstra/dwarffs`
+    - Display outputs of a flake: `nix flake show github:edolstra/dwarffs`
+    - Official registry: https://raw.githubusercontent.com/NixOS/flake-registry/master/flake-registry.json
+
 ## Env variables
 
 - https://nixos.org/manual/nix/unstable/command-ref/env-common.html
@@ -115,6 +138,16 @@ Days spent learning: 5/30
 - Raspberry PI: https://nixos.wiki/wiki/NixOS_on_ARM/Raspberry_Pi
 - `-A` refers to "Attribute" in multiple commands like `nix-build` or `nix-env`)
 - Conditionally use an environment variable: https://discourse.nixos.org/t/is-this-a-good-way-to-modularize-home-manager-home-nix-for-home-work/5817/5
+
+## Topics
+
+### Vim/Neovim
+
+- Custom vim plugin: https://stackoverflow.com/a/65778614
+- Vim utils implementation: https://github.com/NixOS/nixpkgs/blob/master/pkgs/misc/vim-plugins/vim-utils.nix
+- https://gsc.io/70266391-48a6-49be-ab5d-acb5d7f17e76-nixpkgs/doc/nixpkgs-manual/html/users-guide-to-vim-pluginsaddonsbundlesscripts-in-nixpkgs.html
+
+## [Doubts](./DOUBTS.md)
 
 ## Resources
 
@@ -138,6 +171,7 @@ Days spent learning: 5/30
 - https://github.com/mitchellh/nixos-config
 - https://github.com/thomashoneyman/.dotfiles
 - https://github.com/srid/nix-config/
+- https://github.com/noib3/dotfiles/
 
 ### Tutorials
 

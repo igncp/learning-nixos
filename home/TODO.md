@@ -3,10 +3,7 @@ Next steps:
 - Improve zsh config:
     - how to manually source oh-my-zsh
 - Improve fzf config
-- Configure nvim with plugins
+- Configure nvim with all plugins
 - Setup rofi
-- Try to create a shell environment with scc: https://nixos.wiki/wiki/Development_environment_with_nix-shell
-    - Review https://nixos.org/guides/nix-pills/callpackage-design-pattern.html
-    - Also learn about overlays which may be a solution for this
-- Install alacrity
 - Try using flakes
+- Add a script for formatting using nixpkgs-fmt

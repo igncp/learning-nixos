@@ -1,8 +1,11 @@
 { config, pkgs, ... }:
-  let
-    personal_config = import ./config.nix;
-  in
+let
+  personal_config = import ./config.nix;
+in
 {
+  imports = [
+    ./nvim.nix
+  ];
   home.username = "igncp";
   home.homeDirectory = "/home/igncp";
   home.stateVersion = "21.05";
@@ -15,7 +18,23 @@
     setopt no_global_rcs
   '';
 
-  home.packages = personal_config.get_home_pkgs pkgs;
+  home.packages = with pkgs; [
+    fzf
+    htop
+    jq
+    lsof
+    moreutils # vidir
+    ncdu
+    neofetch
+    oh-my-zsh
+    ranger
+    tree
+    unzip
+    zip
+    zsh
+    (callPackage ./git-ftp.nix { })
+  ];
+
   programs.home-manager.enable = true;
 
   home.sessionVariables = {
@@ -37,9 +56,6 @@
 
   programs.git.enable = true;
   programs.git.includes = [{ path = ./gitconfig; }];
-
-  programs.neovim.enable = true;
-  programs.neovim.extraConfig = builtins.readFile ./.vimrc;
 
   programs.vscode = {
     enable = true;
