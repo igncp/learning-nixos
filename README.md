@@ -6,7 +6,7 @@ The goal is to spend at least 30 days learning Nix + NixOS, and then decide if i
 
 The idea is that the 30 days don't have to be consecutive although each learning day should be at most a few days apart from each other. I have to spend at least one hour for it to count as a day.
 
-Days spent learning: 6/30
+Days spent learning: 7/30
 
 - https://nixos.org/
 
@@ -83,6 +83,7 @@ Days spent learning: 6/30
 - Run a pure environment: `nix-shell --pure -p git -I nixpkgs=https://github.com/NixOS/nixpkgs/archive/82b5f87fcc710a99c47c5ffe441589807a8202af.tar.gz`
     - The `--pure` flag means that then bash environment (e.g. editor) is not inherited, so normally is better without `--pure`
     - `-I` would pin the `git` version
+- More info: https://nixos.wiki/wiki/Development_environment_with_nix-shell
 
 ### nix-env
 
@@ -172,6 +173,7 @@ Days spent learning: 6/30
 - https://github.com/thomashoneyman/.dotfiles
 - https://github.com/srid/nix-config/
 - https://github.com/noib3/dotfiles/
+- PHP: https://github.com/loophp/nix-shell
 
 ### Tutorials
 

@@ -1,4 +1,4 @@
-with (import <nixpkgs> {});
+with (import <nixpkgs> { });
 derivation {
   name = "hello";
   builder = "${bash}/bin/bash";

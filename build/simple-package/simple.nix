@@ -2,7 +2,7 @@
 
 # nix-build simple.nix
 
-with (import <nixpkgs> {});
+with (import <nixpkgs> { });
 derivation {
   name = "simple";
   builder = "${bash}/bin/bash";

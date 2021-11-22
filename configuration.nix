@@ -1,5 +1,8 @@
 { config, pkgs, ... }:
 
+let
+  keys = import /home/igncp/.config/nixpkgs/ssh.nix;
+in
 {
   imports =
     [
@@ -53,8 +56,11 @@
     shell = pkgs.zsh;
   };
 
-  users.users.igncp.openssh.authorizedKeys.keys =
-    let keys = import /home/igncp/.config/nixpkgs/ssh.nix;
-    in [ keys.authorizedKeys ];
+  users.users.igncp.openssh.authorizedKeys.keys = [ keys.authorizedKeys ];
+  users.users.root.openssh.authorizedKeys.keys = [ keys.authorizedKeys ];
+
+  # drupal test
+  services.mysql.enable = true;
+  services.mysql.package = (import <nixpkgs> { }).mariadb;
 }
 

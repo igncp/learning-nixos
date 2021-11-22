@@ -152,7 +152,7 @@ bar {
   separator_symbol " | "
   status_command i3status
   mode hide
-  modifier Mod4
+  modifier $mod
   font pango:Cantarell 20
   strip_workspace_numbers yes
 
@@ -175,7 +175,7 @@ client.focused_inactive #888888 #222222 #ffffff #222222
 client.unfocused        #888888 #222222 #ffffff #222222
 client.urgent           #900000 #900000 #ffffff #900000
 
-bindsym Mod1+d exec "rofi -show combi -font 'hack 20' -combi-modi drun,window,ssh"
+bindsym $mod+d exec "rofi -show combi -font 'hack 20' -combi-modi drun,window,ssh"
 
 bindsym $mod+Tab workspace back_and_forth
 exec --no-startup-id picom
