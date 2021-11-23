@@ -183,6 +183,10 @@ Days spent learning: 7/30
 - Example of bundling a binary: https://discourse.nixos.org/t/how-to-install-github-released-binary/1328/5
 - Derivations: https://www.sam.today/blog/creating-a-super-simple-derivation-learning-nix-pt-3/
 
+### Videos
+
+- Kubernetes cluster: https://www.youtube.com/watch?v=rTovNSGH_qo
+
 ### Repos
 
 - nixpkgs: `git clone https://github.com/NixOS/nixpkgs.git --depth 1`
