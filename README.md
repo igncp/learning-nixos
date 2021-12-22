@@ -1,12 +1,10 @@
-# 30 Days of NixOS
+# Learning NixOS
 
 This repository organizes my learnings about NixOS (and Nix), as an exercise to eventually consider whether to use it in my development environment. I start from scratch so most of the initial learnings will be the basic concepts and tools.
 
-The goal is to spend at least 30 days learning Nix + NixOS, and then decide if it is worth to continue learning it, to start migrate to it from my existing Linux setup, or to leave the idea for now. Setting a minimum of 30 days because of the steep learning curve which makes it difficult to make an informed decision.
+Conclusion: After consideration, I didn't think NixOS would be helpful for my case at this stage. It relies in many internal conventions, in the language Nix, and other requirements which are not necessary when using bash scripts to provision a machine. The benefit of reproducible builds doesn't outweight the costs for my particular case.
 
-The idea is that the 30 days don't have to be consecutive although each learning day should be at most a few days apart from each other. I have to spend at least one hour for it to count as a day.
-
-Days spent learning: 7/30
+However, I may revisit this and continue learning in the future. Ideally there will be more documentation available and a bigger userbase.
 
 - https://nixos.org/
 
